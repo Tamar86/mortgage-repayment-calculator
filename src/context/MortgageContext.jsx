@@ -14,7 +14,6 @@ function mortgageReducer(state, action) {
 		case 'mortgage/amount':
 			return {
 				...state,
-				isActive: true,
 				mortgageAmount: action.payload,
 			};
 		case 'mortgage/term':
@@ -23,12 +22,16 @@ function mortgageReducer(state, action) {
 			return {
 				...state,
 				mortgageRate: action.payload,
-				active: true,
 			};
 		case 'type/selected':
 			return { ...state, selectedType: action.payload };
 		case 'mortgageData/submit':
 			return { ...state, mortgageData: action.payload, isSubmitted: true };
+		case 'clear/all':
+			return initialState;
+
+		default:
+			return state;
 	}
 }
 
@@ -41,7 +44,6 @@ function MortgageProvider({ children }) {
 			mortgageAmount,
 			mortgageTerm,
 			mortgageRate,
-
 			selectedType,
 			isSubmitted,
 		},
@@ -55,7 +57,6 @@ function MortgageProvider({ children }) {
 				mortgageRate,
 				mortgageTerm,
 				selectedType,
-
 				isSubmitted,
 				mortgageData,
 				dispatch,

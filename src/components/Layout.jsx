@@ -27,24 +27,27 @@ const StyledLayout = styled.div`
 	}
 
 	@media (max-width: 768px) {
-		width: 35rem;
+		/* width: 35rem; */
 	}
 
 	@media (max-width: 650px) {
-		width: 30rem;
+		width: 35rem;
 	}
 
+	@media (max-width: 600px) {
+		width: 33rem;
+	}
 	@media (max-width: 550px) {
+		width: 30rem;
+	}
+	@media (max-width: 480px) {
 		width: 25rem;
 	}
-	@media (max-width: 450px) {
+	@media (max-width: 400px) {
 		width: 23rem;
 	}
-	@media (max-width: 400px) {
+	@media (max-width: 375px) {
 		width: 20rem;
-	}
-	@media (max-width: 370px) {
-		width: 18rem;
 	}
 `;
 

@@ -34,11 +34,11 @@ const StyledForm = styled.form`
 	gap: 4.5rem;
 
 	@media (max-width: 400px) {
-		width: 16rem;
+		width: 19rem;
 	}
 
 	@media (max-width: 375px) {
-		width: 14rem;
+		width: 17rem;
 	}
 `;
 
@@ -63,6 +63,7 @@ function FormLayout() {
 	const {
 		register,
 		handleSubmit,
+		reset,
 		formState: { errors },
 	} = useForm();
 
@@ -72,7 +73,7 @@ function FormLayout() {
 
 	return (
 		<Container>
-			<MortgageHeading />
+			<MortgageHeading reset={reset} />
 			<StyledForm onSubmit={handleSubmit(onSubmit)}>
 				<Form>
 					<MortgageAmount register={register} errors={errors} />

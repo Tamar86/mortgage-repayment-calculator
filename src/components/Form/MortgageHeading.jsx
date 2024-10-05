@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { useMortgage } from '../../context/MortgageContext';
+import { useForm } from 'react-hook-form';
 
 const HeadingContainer = styled.div`
 	display: flex;
@@ -25,16 +27,26 @@ const BtnClear = styled.button`
 	color: var(--Slate-700);
 	font-size: 1rem;
 
+	&:hover {
+		cursor: pointer;
+	}
+
 	&:focus-visible {
 		outline: 3px solid var(--Slate-700);
 	}
 `;
 
-function MortgageHeading() {
+function MortgageHeading({ reset }) {
+	const { dispatch } = useMortgage();
+
+	function handleClearAll() {
+		dispatch({ type: 'clear/all' });
+		reset();
+	}
 	return (
 		<HeadingContainer>
 			<Heading>Mortgage Calculator</Heading>
-			<BtnClear>Clear All</BtnClear>
+			<BtnClear onClick={handleClearAll}>Clear All</BtnClear>
 		</HeadingContainer>
 	);
 }

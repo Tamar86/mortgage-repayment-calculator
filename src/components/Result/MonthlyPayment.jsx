@@ -22,6 +22,10 @@ const Payment = styled.span`
 		font-size: 2.5rem;
 		padding-bottom: 1rem;
 	}
+
+	@media (max-width: 375px) {
+		font-size: 2rem;
+	}
 `;
 
 function MonthlyPayment() {

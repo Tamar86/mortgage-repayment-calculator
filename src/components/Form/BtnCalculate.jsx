@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useMortgage } from '../../context/MortgageContext';
 
 const StyledBtnCalculate = styled.button`
 	display: flex;
@@ -27,12 +28,26 @@ const StyledBtnCalculate = styled.button`
 	@media (max-width: 1024px) {
 		width: 100%;
 	}
-	@media (max-width: 370px) {
+	@media (max-width: 375px) {
 		font-size: smaller;
 	}
 `;
 
 function BtnCalculate() {
+	const {
+		mortgageAmount,
+		mortgageTerm,
+		mortgageRate,
+		selectedType,
+		isSubmitted,
+	} = useMortgage();
+
+	console.log('mortgageAmount', mortgageAmount);
+
+	console.log('mortgageTerm', mortgageTerm);
+	console.log('mortgageRate', mortgageRate);
+	console.log('selectedType', selectedType);
+	console.log('isSubmitted', isSubmitted);
 	return (
 		<StyledBtnCalculate>
 			<span>

@@ -50,7 +50,7 @@ body {
 	background-color: var(--Slate-100);
 
 	@media (max-width:768px) {
-		padding: 3rem;
+		padding: 1rem;
 	}
 
 }

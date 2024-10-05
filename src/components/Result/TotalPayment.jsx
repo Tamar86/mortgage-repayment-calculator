@@ -22,6 +22,11 @@ const Payment = styled.span`
 		font-size: 1.2rem;
 		padding-bottom: 1rem;
 	}
+
+	@media (max-width: 375px) {
+		font-size: 1rem;
+		padding-bottom: 1rem;
+	}
 `;
 
 function TotalPayment() {
