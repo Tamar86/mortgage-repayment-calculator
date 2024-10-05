@@ -41,14 +41,14 @@ const InputContainer = styled.div`
 	border-radius: 0.2rem;
 
 	background-color: ${props =>
-		props.isError ? 'var(--Red)' : 'var(--Slate-100)'};
-	color: ${props => (props.isError ? 'var(--White)' : 'var(--Slate-700)')};
+		props.required ? 'var(--Red)' : 'var(--Slate-100)'};
+	color: ${props => (props.required ? 'var(--White)' : 'var(--Slate-700)')};
 	&:hover {
 		cursor: pointer;
 		border: ${props =>
-			props.isError ? 'solid 2px var(--Slate-700)' : 'solid 2px var(--Lime)'};
+			props.required ? 'solid 2px var(--Slate-700)' : 'solid 2px var(--Lime)'};
 		background-color: ${props =>
-			props.isError ? 'var(--Red)' : 'var(--Lime)'};
+			props.required ? 'var(--Red)' : 'var(--Lime)'};
 	}
 `;
 
@@ -69,7 +69,7 @@ function TermAndRate({ register, errors }) {
 		<StyledTermAndRate>
 			<Term>
 				<label>Mortgage Term</label>
-				<InputContainer isError={errors.term}>
+				<InputContainer required={errors.term}>
 					<Input
 						type='text'
 						{...register('term', {
@@ -88,7 +88,7 @@ function TermAndRate({ register, errors }) {
 			</Term>
 			<Rate>
 				<label>Interest Rate</label>
-				<InputContainer isError={errors.rate}>
+				<InputContainer required={errors.rate}>
 					<Input
 						type='text'
 						onChange={e =>

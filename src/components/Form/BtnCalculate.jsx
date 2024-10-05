@@ -34,20 +34,6 @@ const StyledBtnCalculate = styled.button`
 `;
 
 function BtnCalculate() {
-	const {
-		mortgageAmount,
-		mortgageTerm,
-		mortgageRate,
-		selectedType,
-		isSubmitted,
-	} = useMortgage();
-
-	console.log('mortgageAmount', mortgageAmount);
-
-	console.log('mortgageTerm', mortgageTerm);
-	console.log('mortgageRate', mortgageRate);
-	console.log('selectedType', selectedType);
-	console.log('isSubmitted', isSubmitted);
 	return (
 		<StyledBtnCalculate>
 			<span>
