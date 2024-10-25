@@ -1,10 +1,16 @@
 import { useMortgage } from '../context/MortgageContext';
 
 export function usePayments() {
-	const { mortgageAmount, mortgageRate, mortgageTerm } = useMortgage();
+	const { mortgageData } = useMortgage();
 
-	const numberOfPayments = Number(mortgageTerm) * 12;
-	const monthlyInterestRate = Number(mortgageRate) / 100 / 12;
+	const { mortgageAmount, rate, term } = mortgageData;
+
+	console.log(mortgageData);
+
+	console.log(mortgageAmount, rate, term);
+
+	const numberOfPayments = Number(term) * 12;
+	const monthlyInterestRate = Number(rate) / 100 / 12;
 	//Monthly repayments
 	const monthlyRepayment =
 		(Number(mortgageAmount) *
@@ -17,6 +23,7 @@ export function usePayments() {
 	//Total
 	const totalRepayment = numberOfPayments * monthlyRepayment;
 	const totalInterest = totalRepayment - Number(mortgageAmount);
+	console.log(totalRepayment, totalInterest);
 
 	return { monthlyRepayment, monthlyInterest, totalRepayment, totalInterest };
 }

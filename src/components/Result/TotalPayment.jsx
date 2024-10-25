@@ -30,7 +30,13 @@ const Payment = styled.span`
 `;
 
 function TotalPayment() {
-	const { selectedType } = useMortgage();
+	const {
+		selectedType,
+		mortgageData,
+		mortgageTerm,
+		mortgageRate,
+		isSubmitted,
+	} = useMortgage();
 
 	const { totalRepayment, totalInterest } = usePayments();
 
